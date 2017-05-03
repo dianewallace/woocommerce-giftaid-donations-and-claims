@@ -163,7 +163,7 @@ if ( ! class_exists( 'Wooga_Cart' ) ) {
 
 			global $woocommerce;
 
-			if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'woocommerce-cart' ) ) {
+			if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'woocommerce-cart' ) ) {
 				return;
 			}
 
